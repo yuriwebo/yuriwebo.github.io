@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Set up AWS EC2 Parse Server in Android | FoYuri</title><meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="I learned Android along with The Complete Android Oreo Developer Course and was stuck in the Instagram Clone chapter when I tried to set up the AWS EC2 Parse Server. After googling many times, I final">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Set up AWS EC2 Parse Server in Android">
+<meta property="og:url" content="https://foystor.github.io/2022/03/15/set-up-aws-parse-server/index.html">
+<meta property="og:site_name" content="FoYuri">
+<meta property="og:description" content="I learned Android along with The Complete Android Oreo Developer Course and was stuck in the Instagram Clone chapter when I tried to set up the AWS EC2 Parse Server. After googling many times, I final">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-03-15T09:09:32.000Z">
+<meta property="article:modified_time" content="2024-07-01T04:43:01.617Z">
+<meta property="article:author" content="Foy Wan">
+<meta property="article:tag" content="AWS">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="Parse Server">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="FoYuri" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">FoYuri</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://foystor.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-set-up-aws-parse-server" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/15/set-up-aws-parse-server/" class="article-date">
+  <time class="dt-published" datetime="2022-03-15T09:09:32.000Z" itemprop="datePublished">2022-03-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Coding-Tutorial/">Coding - Tutorial</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Set up AWS EC2 Parse Server in Android
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>I learned Android along with <a target="_blank" rel="noopener" href="https://www.udemy.com/course/the-complete-android-oreo-developer-course/">The Complete Android Oreo Developer Course</a> and was stuck in the Instagram Clone chapter when I tried to set up the AWS EC2 Parse Server.</p>
+<p>After googling many times, I finally figured it out and got access to the Parse Dashboard!</p>
+<p>If you also have trouble setting up the Parse Server, just go ahead and see if my solutions would inspire you.</p>
+<span id="more"></span>
+
+<h2 id="Connect-to-the-instance-using-SSH-client"><a href="#Connect-to-the-instance-using-SSH-client" class="headerlink" title="Connect to the instance using SSH client"></a>Connect to the instance using SSH client</h2><p>In Amazon Dashboard choose <code>Instances</code> from the left sidebar, and then select the instance we would like to connect to.</p>
+<figure>
+  <img src=connect.png>
+  <figcaption>Select an instance and click the Connect button</figcaption>
+</figure>
+
+<figure>
+  <img src=ssh-client.png>
+  <figcaption>Click on the SSH client tab</figcaption>
+</figure>
+
+<p>We can just follow the instruction above, but there might be some unexpected problems.</p>
+<p>So refer to the steps below:</p>
+<ol>
+<li><p><strong>Open the terminal and locate the private key file</strong></p>
+<p> Check the <code>.pem.txt</code> file we’ve just downloaded when creating a new key pair.</p>
+<p> Remove the <strong>“.txt”</strong> behind to keep it as a <code>.pem</code> file. This <code>.pem</code> file is our private key file.</p>
+<p> Then open up the terminal and get to where the file is. In my case it’s on the desktop:</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd Desktop</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Change the permissions of the <code>.pem</code> file so only the root user can read it</strong></p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ chmod 400 instagramandroid.pem</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Connect to the instance using its Public DNS</strong></p>
+<p> In this step, simply copying the command in the instruction might get errors.</p>
+<p> We should verify that we are connecting with the <a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html#TroubleshootingInstancesConnectingPuTTY">appropriate user name for our AMI</a>.</p>
+<p> In my case:</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ssh -i &quot;instagramandroid.pem&quot; bitnami@ec2-3-14-27-1.us-east-2.compute.amazonaws.com</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>If we see something on our terminal screen like this:</p>
+<figure>
+  <img src=success-connect.png>
+</figure>
+
+<p>That means we’ve successfully connected to our instance.</p>
+<h2 id="Do-some-setup"><a href="#Do-some-setup" class="headerlink" title="Do some setup"></a>Do some setup</h2><p>Once we get to that screen, we need to move into where the parse code is, to do some setup:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd /opt/bitnami/parse</span><br></pre></td></tr></table></figure>
+
+<p>Next, we have a file that we need to edit:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ vi config.json</span><br></pre></td></tr></table></figure>
+
+<p>Inside the file, we can see the information of the server:</p>
+<figure>
+  <img src=config.png>
+</figure>
+
+<p>We can paste the information required to initialize the Parse Server in our android application.</p>
+<h2 id="Connect-to-the-Parse-Dashboard"><a href="#Connect-to-the-Parse-Dashboard" class="headerlink" title="Connect to the Parse Dashboard"></a>Connect to the Parse Dashboard</h2><p>We should be able to visit the Parse Dashboard by surfing to our server public IP address (which we can get from the AWS console) in our browser.</p>
+<figure>
+  <img src=url.png>
+</figure>
+
+<figure>
+  <img src=login.png>
+  <figcaption>Login page for the Parse Server</figcaption>
+</figure>
+
+<p>Get the user name and password in the terminal:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cat bitnami_credentials</span><br></pre></td></tr></table></figure>
+
+<figure>
+  <img src=dashboard.png>
+  <figcaption>Log in successfully</figcaption>
+</figure>
+
+<h2 id="Configure-publicServerURL"><a href="#Configure-publicServerURL" class="headerlink" title="Configure publicServerURL"></a>Configure publicServerURL</h2><p>Let’s say we upload a photo to the parse server.</p>
+<p>When we click on the image link, it opens up a url using the localhost IP again.</p>
+<img src=link.png>
+
+<br/>
+
+<img src=localhost.png>
+
+<p>That’s a promblem. Because it means we can not get access to the photo in our program.</p>
+<blockquote><p>When using files on Parse, you will need to use the publicServerURL option in your Parse Server config. This is the URL that files will be accessed from, so it should be a URL that resolves to your Parse Server. Make sure to include your mount point in this URL.</p>
+<footer><strong>Parse's Documentation</strong></footer></blockquote>
+
+<p>The <code>publicServerURL</code> is explicitely required for those cases. Parse server injects the <code>publicServerURL</code> for all our files at runtime.</p>
+<p>Every file URL is replaced at runtime, with the full URL. If we set the <code>publicServerURL</code>, this will be set in all the responses.</p>
+<p>All we have to do is adding the <code>publicServerURL</code> parameter to the server.</p>
+<ol>
+<li><p><strong>Open the <code>config.json</code> file</strong></p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd /opt/bitnami/parse</span><br></pre></td></tr></table></figure>
+
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ vi config.json</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Add a new line below the <code>serverURL</code> parameter</strong></p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;publicServerURL&quot;: &quot;http://IP/parse&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Save it and restart Parse running</strong></p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ sudo /opt/bitnami/ctlscript.sh restart parse</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>Now we can refresh the Parse Dashboard page, and can get to the right URL to download photos successfully.</p>
+<p><br/><br/><br/><br/></p>
+<p><strong><em>References</em></strong></p>
+<p><a target="_blank" rel="noopener" href="https://community.bitnami.com/t/unable-to-find-opt-bitnami-apps-parse-htdocs-server-js/78200"><em>Unable to find &#x2F;opt&#x2F;bitnami&#x2F;apps&#x2F;parse&#x2F;htdocs&#x2F;server.js</em></a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html#TroubleshootingInstancesConnectingPuTTY"><em>Error: Server refused our key or No supported authentication methods available</em></a></p>
+<p><a target="_blank" rel="noopener" href="https://community.bitnami.com/t/i-cannot-or-do-not-know-how-to-connect-to-the-parse-dashboard/97505"><em>I cannot or do not know how to connect to the parse dashboard</em></a></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/38648071/cant-find-password-in-aws-system-log-for-new-ami-created-from-bitnami-wordpress"><em>Can’t find password in AWS System Log for new AMI created from Bitnami Wordpress AMI</em></a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/parse-community/parse-server/issues/4290"><em>Parse Server - Image files’ path returns localhost</em></a></p>
+<p><a target="_blank" rel="noopener" href="https://community.bitnami.com/t/unable-to-download-or-view-images-i-o-error/71400"><em>Unable to download or view images</em></a></p>
+<!-- flag of hidden posts -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://foystor.github.io/2022/03/15/set-up-aws-parse-server/" data-id="cly2sy8fh0033yc8oavya6twi" data-title="Set up AWS EC2 Parse Server in Android" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AWS/" rel="tag">AWS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Parse-Server/" rel="tag">Parse Server</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Coding-Bugfix/">Coding - Bugfix</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Coding-Knowledge/">Coding - Knowledge</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Coding-Tutorial/">Coding - Tutorial</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Manga/">Manga</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TV-series/">TV series</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/API/" rel="tag">API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AWS/" rel="tag">AWS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CI-CD/" rel="tag">CI&#x2F;CD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataSource/" rel="tag">DataSource</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eureka-Server/" rel="tag">Eureka Server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GraphQL/" rel="tag">GraphQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hibernate/" rel="tag">Hibernate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Intellij/" rel="tag">Intellij</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JPA/" rel="tag">JPA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jenkins/" rel="tag">Jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Log4j/" rel="tag">Log4j</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Logging/" rel="tag">Logging</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/" rel="tag">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Microservice/" rel="tag">Microservice</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mockito/" rel="tag">Mockito</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/" rel="tag">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ORM/" rel="tag">ORM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Parse-Server/" rel="tag">Parse Server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Persistence-Context/" rel="tag">Persistence Context</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST/" rel="tag">REST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SLF4J/" rel="tag">SLF4J</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SPL/" rel="tag">SPL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Splunk/" rel="tag">Splunk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Boot/" rel="tag">Spring Boot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Cloud/" rel="tag">Spring Cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-MVC/" rel="tag">Spring MVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Security/" rel="tag">Spring Security</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swagger/" rel="tag">Swagger</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Testing/" rel="tag">Testing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tomcat/" rel="tag">Tomcat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/" rel="tag">Tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webpack/" rel="tag">Webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cp/" rel="tag">cp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/intro/" rel="tag">intro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/material-collection/" rel="tag">material collection</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/API/" style="font-size: 16.67px;">API</a> <a href="/tags/AWS/" style="font-size: 13.33px;">AWS</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/CI-CD/" style="font-size: 11.67px;">CI/CD</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/DataSource/" style="font-size: 10px;">DataSource</a> <a href="/tags/Docker/" style="font-size: 11.67px;">Docker</a> <a href="/tags/Eureka-Server/" style="font-size: 11.67px;">Eureka Server</a> <a href="/tags/Git/" style="font-size: 11.67px;">Git</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/GraphQL/" style="font-size: 10px;">GraphQL</a> <a href="/tags/Hexo/" style="font-size: 11.67px;">Hexo</a> <a href="/tags/Hibernate/" style="font-size: 10px;">Hibernate</a> <a href="/tags/Intellij/" style="font-size: 10px;">Intellij</a> <a href="/tags/JDBC/" style="font-size: 10px;">JDBC</a> <a href="/tags/JPA/" style="font-size: 11.67px;">JPA</a> <a href="/tags/Java/" style="font-size: 18.33px;">Java</a> <a href="/tags/Jenkins/" style="font-size: 11.67px;">Jenkins</a> <a href="/tags/Log4j/" style="font-size: 11.67px;">Log4j</a> <a href="/tags/Logging/" style="font-size: 13.33px;">Logging</a> <a href="/tags/Maven/" style="font-size: 11.67px;">Maven</a> <a href="/tags/Microservice/" style="font-size: 11.67px;">Microservice</a> <a href="/tags/Mockito/" style="font-size: 10px;">Mockito</a> <a href="/tags/MyBatis/" style="font-size: 10px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Node-js/" style="font-size: 15px;">Node.js</a> <a href="/tags/ORM/" style="font-size: 10px;">ORM</a> <a href="/tags/Parse-Server/" style="font-size: 10px;">Parse Server</a> <a href="/tags/Persistence-Context/" style="font-size: 10px;">Persistence Context</a> <a href="/tags/REST/" style="font-size: 15px;">REST</a> <a href="/tags/SLF4J/" style="font-size: 11.67px;">SLF4J</a> <a href="/tags/SPL/" style="font-size: 10px;">SPL</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/Splunk/" style="font-size: 13.33px;">Splunk</a> <a href="/tags/Spring-Boot/" style="font-size: 20px;">Spring Boot</a> <a href="/tags/Spring-Cloud/" style="font-size: 11.67px;">Spring Cloud</a> <a href="/tags/Spring-MVC/" style="font-size: 11.67px;">Spring MVC</a> <a href="/tags/Spring-Security/" style="font-size: 11.67px;">Spring Security</a> <a href="/tags/Swagger/" style="font-size: 11.67px;">Swagger</a> <a href="/tags/Testing/" style="font-size: 11.67px;">Testing</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/tags/Webpack/" style="font-size: 15px;">Webpack</a> <a href="/tags/cp/" style="font-size: 10px;">cp</a> <a href="/tags/intro/" style="font-size: 10px;">intro</a> <a href="/tags/material-collection/" style="font-size: 10px;">material collection</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/07/18/%E4%BB%98%E3%81%8D%E5%90%88%E3%81%A3%E3%81%A6%E3%81%82%E3%81%92%E3%81%A6%E3%82%82%E3%81%84%E3%81%84%E3%81%8B%E3%81%AA/">付き合ってあげてもいいかな Girls Love Manga</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/26/daokoi/">DaoKoi(FonBelle) Sweet On-Screen Couple</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 Foy Wan<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

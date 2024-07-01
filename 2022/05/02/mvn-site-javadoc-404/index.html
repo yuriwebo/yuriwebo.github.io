@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Execute &#34;mvn site&#34; with maven-javadoc-plugin can&#39;t access to Javadoc | FoYuri</title><meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="ProblemI’ve built a project using Maven Quickstart Archetype. I followed the usage guide of the Apache Maven Javadoc Plugin, and expected to have a Javadoc included in my project documentation.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Execute &quot;mvn site&quot; with maven-javadoc-plugin can&#39;t access to Javadoc">
+<meta property="og:url" content="https://foystor.github.io/2022/05/02/mvn-site-javadoc-404/index.html">
+<meta property="og:site_name" content="FoYuri">
+<meta property="og:description" content="ProblemI’ve built a project using Maven Quickstart Archetype. I followed the usage guide of the Apache Maven Javadoc Plugin, and expected to have a Javadoc included in my project documentation.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-05-02T12:04:57.000Z">
+<meta property="article:modified_time" content="2024-07-01T04:42:47.090Z">
+<meta property="article:author" content="Foy Wan">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Maven">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="FoYuri" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">FoYuri</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://foystor.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-mvn-site-javadoc-404" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/02/mvn-site-javadoc-404/" class="article-date">
+  <time class="dt-published" datetime="2022-05-02T12:04:57.000Z" itemprop="datePublished">2022-05-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Coding-Bugfix/">Coding - Bugfix</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Execute &#34;mvn site&#34; with maven-javadoc-plugin can&#39;t access to Javadoc
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>I’ve built a project using <code>Maven Quickstart Archetype</code>.</p>
+<p>I followed the usage guide of the <a target="_blank" rel="noopener" href="https://maven.apache.org/plugins/maven-javadoc-plugin/usage.html">Apache Maven Javadoc Plugin</a>, and expected to have a Javadoc included in my project documentation.</p>
+<figure>
+  <img src=usage.png>
+  <figcaption>Apache Maven Javadoc Plugin Usage</figcaption>
+</figure>
+
+<figure>
+  <img src=copy.png>
+</figure>
+
+<p>However, I got a <strong>404</strong> on my Javadoc page.</p>
+<img src=404.png>
+
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Change the version of <code>maven-javadoc-plugin</code> to <strong>3.2.0</strong> works for me.</p>
+<figure>
+  <img src=edit.png>
+</figure>
+
+<p>Compared to the <code>target</code> directory generated when executing <code>mvn site</code> on the <strong>3.4.0</strong> version, the one generated on the <strong>3.2.0</strong> version added directory and file below:</p>
+<figure>
+  <img src=compare.png>
+</figure><!-- flag of hidden posts -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://foystor.github.io/2022/05/02/mvn-site-javadoc-404/" data-id="cly2sy8fg002ryc8o3un7c767" data-title="Execute &#34;mvn site&#34; with maven-javadoc-plugin can&#39;t access to Javadoc" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/" rel="tag">Maven</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Coding-Bugfix/">Coding - Bugfix</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Coding-Knowledge/">Coding - Knowledge</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Coding-Tutorial/">Coding - Tutorial</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Manga/">Manga</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TV-series/">TV series</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/API/" rel="tag">API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AWS/" rel="tag">AWS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CI-CD/" rel="tag">CI&#x2F;CD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataSource/" rel="tag">DataSource</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eureka-Server/" rel="tag">Eureka Server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GraphQL/" rel="tag">GraphQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hibernate/" rel="tag">Hibernate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Intellij/" rel="tag">Intellij</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JPA/" rel="tag">JPA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jenkins/" rel="tag">Jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Log4j/" rel="tag">Log4j</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Logging/" rel="tag">Logging</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/" rel="tag">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Microservice/" rel="tag">Microservice</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mockito/" rel="tag">Mockito</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/" rel="tag">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ORM/" rel="tag">ORM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Parse-Server/" rel="tag">Parse Server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Persistence-Context/" rel="tag">Persistence Context</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST/" rel="tag">REST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SLF4J/" rel="tag">SLF4J</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SPL/" rel="tag">SPL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Splunk/" rel="tag">Splunk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Boot/" rel="tag">Spring Boot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Cloud/" rel="tag">Spring Cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-MVC/" rel="tag">Spring MVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Security/" rel="tag">Spring Security</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swagger/" rel="tag">Swagger</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Testing/" rel="tag">Testing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tomcat/" rel="tag">Tomcat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/" rel="tag">Tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webpack/" rel="tag">Webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cp/" rel="tag">cp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/intro/" rel="tag">intro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/material-collection/" rel="tag">material collection</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/API/" style="font-size: 16.67px;">API</a> <a href="/tags/AWS/" style="font-size: 13.33px;">AWS</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/CI-CD/" style="font-size: 11.67px;">CI/CD</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/DataSource/" style="font-size: 10px;">DataSource</a> <a href="/tags/Docker/" style="font-size: 11.67px;">Docker</a> <a href="/tags/Eureka-Server/" style="font-size: 11.67px;">Eureka Server</a> <a href="/tags/Git/" style="font-size: 11.67px;">Git</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/GraphQL/" style="font-size: 10px;">GraphQL</a> <a href="/tags/Hexo/" style="font-size: 11.67px;">Hexo</a> <a href="/tags/Hibernate/" style="font-size: 10px;">Hibernate</a> <a href="/tags/Intellij/" style="font-size: 10px;">Intellij</a> <a href="/tags/JDBC/" style="font-size: 10px;">JDBC</a> <a href="/tags/JPA/" style="font-size: 11.67px;">JPA</a> <a href="/tags/Java/" style="font-size: 18.33px;">Java</a> <a href="/tags/Jenkins/" style="font-size: 11.67px;">Jenkins</a> <a href="/tags/Log4j/" style="font-size: 11.67px;">Log4j</a> <a href="/tags/Logging/" style="font-size: 13.33px;">Logging</a> <a href="/tags/Maven/" style="font-size: 11.67px;">Maven</a> <a href="/tags/Microservice/" style="font-size: 11.67px;">Microservice</a> <a href="/tags/Mockito/" style="font-size: 10px;">Mockito</a> <a href="/tags/MyBatis/" style="font-size: 10px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Node-js/" style="font-size: 15px;">Node.js</a> <a href="/tags/ORM/" style="font-size: 10px;">ORM</a> <a href="/tags/Parse-Server/" style="font-size: 10px;">Parse Server</a> <a href="/tags/Persistence-Context/" style="font-size: 10px;">Persistence Context</a> <a href="/tags/REST/" style="font-size: 15px;">REST</a> <a href="/tags/SLF4J/" style="font-size: 11.67px;">SLF4J</a> <a href="/tags/SPL/" style="font-size: 10px;">SPL</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/Splunk/" style="font-size: 13.33px;">Splunk</a> <a href="/tags/Spring-Boot/" style="font-size: 20px;">Spring Boot</a> <a href="/tags/Spring-Cloud/" style="font-size: 11.67px;">Spring Cloud</a> <a href="/tags/Spring-MVC/" style="font-size: 11.67px;">Spring MVC</a> <a href="/tags/Spring-Security/" style="font-size: 11.67px;">Spring Security</a> <a href="/tags/Swagger/" style="font-size: 11.67px;">Swagger</a> <a href="/tags/Testing/" style="font-size: 11.67px;">Testing</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/tags/Webpack/" style="font-size: 15px;">Webpack</a> <a href="/tags/cp/" style="font-size: 10px;">cp</a> <a href="/tags/intro/" style="font-size: 10px;">intro</a> <a href="/tags/material-collection/" style="font-size: 10px;">material collection</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/07/18/%E4%BB%98%E3%81%8D%E5%90%88%E3%81%A3%E3%81%A6%E3%81%82%E3%81%92%E3%81%A6%E3%82%82%E3%81%84%E3%81%84%E3%81%8B%E3%81%AA/">付き合ってあげてもいいかな Girls Love Manga</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/26/daokoi/">DaoKoi(FonBelle) Sweet On-Screen Couple</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 Foy Wan<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
