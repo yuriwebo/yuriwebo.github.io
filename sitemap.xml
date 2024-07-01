@@ -2,7 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://foystor.github.io/tags/index.html</loc>
+    
+    <lastmod>2024-07-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://foystor.github.io/search/index.html</loc>
+    
+    <lastmod>2024-07-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://foystor.github.io/2022/07/18/%E4%BB%98%E3%81%8D%E5%90%88%E3%81%A3%E3%81%A6%E3%81%82%E3%81%92%E3%81%A6%E3%82%82%E3%81%84%E3%81%84%E3%81%8B%E3%81%AA/</loc>
+    
+    <lastmod>2024-07-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://foystor.github.io/categories/index.html</loc>
     
     <lastmod>2024-07-01</lastmod>
     
@@ -36,13 +63,6 @@
   </url>
   
   <url>
-    <loc>https://foystor.github.io/tags/material-collection/</loc>
-    <lastmod>2024-07-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://foystor.github.io/tags/intro/</loc>
     <lastmod>2024-07-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -52,14 +72,14 @@
 
   
   <url>
-    <loc>https://foystor.github.io/categories/TV-series/</loc>
+    <loc>https://foystor.github.io/categories/TV-series-Material-Collection/</loc>
     <lastmod>2024-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://foystor.github.io/categories/Manga/</loc>
+    <loc>https://foystor.github.io/categories/Manga-Recommendation/</loc>
     <lastmod>2024-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

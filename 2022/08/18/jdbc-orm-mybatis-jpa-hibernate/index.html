@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang=en>
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>JDBC, ORM/MyBatis, JPA/Hibernate | FoYuri</title><meta name="robots" content="noindex">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="JDBCJDBC: Java Database Connectivity API, which is a specification for making SQL requests from Java. Udacity&#39;s Glossary  Java has a standard API for connecting to a database executing SQL queries aga">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="JDBCJDBC: Java Database Connectivity API, which is a specification for making SQL requests from Java. Udacity&#39;s Glossary  Java has a standard API for connecting to a database executing SQL queries aga">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JDBC, ORM&#x2F;MyBatis, JPA&#x2F;Hibernate">
 <meta property="og:url" content="https://foystor.github.io/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/index.html">
@@ -17,93 +17,150 @@
 <meta property="article:modified_time" content="2024-07-01T04:42:35.059Z">
 <meta property="article:author" content="Foy Wan">
 <meta property="article:tag" content="Java">
-<meta property="article:tag" content="JPA">
 <meta property="article:tag" content="JDBC">
+<meta property="article:tag" content="JPA">
 <meta property="article:tag" content="Hibernate">
 <meta property="article:tag" content="ORM">
 <meta property="article:tag" content="MyBatis">
 <meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="FoYuri" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>JDBC, ORM/MyBatis, JPA/Hibernate</title><meta name="robots" content="noindex">
+    <!-- styles -->
+    
 <link rel="stylesheet" href="/css/style.css">
 
-  
+    <!-- persian styles -->
     
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+    <meta name="google-site-verification" content="KO7vvBU3ttqbeRJV6Ki9PydxOBnwaOQYzyAX60YqObE" />
+    <meta name="google-site-verification" content="zLOg-wm0CWmnn7HIsEiEjiz2B_93RmWxLAudRxe2DEk" />
 <meta name="generator" content="Hexo 7.2.0"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">FoYuri</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/tags/">Tags</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Categories</a></li><!--
+     --><!--
+       --><li><a href="/search/">Search</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
         
-          <a class="main-nav-link" href="/">Home</a>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://foystor.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://foystor.github.io/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://foystor.github.io/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/&text=JDBC, ORM/MyBatis, JPA/Hibernate"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://foystor.github.io/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/&title=JDBC, ORM/MyBatis, JPA/Hibernate"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://foystor.github.io/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/&is_video=false&description=JDBC, ORM/MyBatis, JPA/Hibernate"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=JDBC, ORM/MyBatis, JPA/Hibernate&body=Check out this article: https://foystor.github.io/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://foystor.github.io/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/&title=JDBC, ORM/MyBatis, JPA/Hibernate"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://foystor.github.io/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/&title=JDBC, ORM/MyBatis, JPA/Hibernate"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://foystor.github.io/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/&title=JDBC, ORM/MyBatis, JPA/Hibernate"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://foystor.github.io/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/&title=JDBC, ORM/MyBatis, JPA/Hibernate"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://foystor.github.io/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/&name=JDBC, ORM/MyBatis, JPA/Hibernate&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://foystor.github.io/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/&t=JDBC, ORM/MyBatis, JPA/Hibernate"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
 
-      <div class="outer">
-        <section id="main"><article id="post-jdbc-orm-mybatis-jpa-hibernate" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/" class="article-date">
-  <time class="dt-published" datetime="2022-08-18T07:32:39.000Z" itemprop="datePublished">2022-08-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Coding-Knowledge/">Coding - Knowledge</a>
-  </div>
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JDBC"><span class="toc-number">1.</span> <span class="toc-text">JDBC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ORM-x2F-MyBatis"><span class="toc-number">2.</span> <span class="toc-text">ORM&#x2F;MyBatis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JPA-x2F-Hibernate"><span class="toc-number">3.</span> <span class="toc-text">JPA&#x2F;Hibernate</span></a></li></ol>
+    </div>
+  </span>
+</div>
 
-  </div>
-  <div class="article-inner">
     
-    
-      <header class="article-header">
+    <div class="content index py4">
         
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      JDBC, ORM/MyBatis, JPA/Hibernate
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        JDBC, ORM/MyBatis, JPA/Hibernate
     </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Foy Wan</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2022-08-18T07:32:39.000Z" itemprop="datePublished">2022-08-18</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Coding-Knowledge/">Coding - Knowledge</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Hibernate/" rel="tag">Hibernate</a>, <a class="tag-link-link" href="/tags/JDBC/" rel="tag">JDBC</a>, <a class="tag-link-link" href="/tags/JPA/" rel="tag">JPA</a>, <a class="tag-link-link" href="/tags/Java/" rel="tag">Java</a>, <a class="tag-link-link" href="/tags/MyBatis/" rel="tag">MyBatis</a>, <a class="tag-link-link" href="/tags/ORM/" rel="tag">ORM</a>
+    </div>
+
+
+    </div>
+  </header>
   
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h2><blockquote><p><strong>JDBC</strong>: Java Database Connectivity API, which is a specification for making SQL requests from Java.</p>
+  <div class="content" itemprop="articleBody">
+    <h2 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h2><blockquote><p><strong>JDBC</strong>: Java Database Connectivity API, which is a specification for making SQL requests from Java.</p>
 <footer><strong>Udacity's Glossary</strong></footer></blockquote>
 
 <p><code>Java</code> has a standard API for connecting to a database executing <code>SQL</code> queries against it. It’s called <code>JDBC</code> or <code>Java Database Connectivity</code>.</p>
@@ -138,126 +195,172 @@
 <p><strong><em>References</em></strong></p>
 <p><em><a target="_blank" rel="noopener" href="https://www.udacity.com/course/java-developer-nanodegree--nd035">Java Web Developer Nanodegree at Udacity</a></em></p>
 <!-- flag of hidden posts -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://foystor.github.io/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/" data-id="cly2x1h1v002yi78o49jn9gr1" data-title="JDBC, ORM/MyBatis, JPA/Hibernate" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hibernate/" rel="tag">Hibernate</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JPA/" rel="tag">JPA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/" rel="tag">MyBatis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ORM/" rel="tag">ORM</a></li></ul>
-
-    </footer>
   </div>
-  
-    
-  
 </article>
 
 
-</section>
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
         
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Manga/">Manga</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TV-series/">TV series</a></li></ul>
-    </div>
-  </div>
+          <div id="footer-post-container">
+  <div id="footer-post">
 
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cp/" rel="tag">cp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/intro/" rel="tag">intro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/material-collection/" rel="tag">material collection</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/cp/" style="font-size: 10px;">cp</a> <a href="/tags/intro/" style="font-size: 10px;">intro</a> <a href="/tags/material-collection/" style="font-size: 10px;">material collection</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
+    <div id="nav-footer" style="display: none">
       <ul>
-        
-          <li>
-            <a href="/2022/07/18/%E4%BB%98%E3%81%8D%E5%90%88%E3%81%A3%E3%81%A6%E3%81%82%E3%81%92%E3%81%A6%E3%82%82%E3%81%84%E3%81%84%E3%81%8B%E3%81%AA/">付き合ってあげてもいいかな Girls Love Manga</a>
-          </li>
-        
-          <li>
-            <a href="/2022/04/26/daokoi/">DaoKoi(FonBelle) Sweet On-Screen Couple</a>
-          </li>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/search/">Search</a></li>
         
       </ul>
     </div>
-  </div>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2024 Foy Wan<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JDBC"><span class="toc-number">1.</span> <span class="toc-text">JDBC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ORM-x2F-MyBatis"><span class="toc-number">2.</span> <span class="toc-text">ORM&#x2F;MyBatis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JPA-x2F-Hibernate"><span class="toc-number">3.</span> <span class="toc-text">JPA&#x2F;Hibernate</span></a></li></ol>
     </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://foystor.github.io/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://foystor.github.io/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/&text=JDBC, ORM/MyBatis, JPA/Hibernate"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://foystor.github.io/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/&title=JDBC, ORM/MyBatis, JPA/Hibernate"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://foystor.github.io/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/&is_video=false&description=JDBC, ORM/MyBatis, JPA/Hibernate"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=JDBC, ORM/MyBatis, JPA/Hibernate&body=Check out this article: https://foystor.github.io/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://foystor.github.io/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/&title=JDBC, ORM/MyBatis, JPA/Hibernate"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://foystor.github.io/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/&title=JDBC, ORM/MyBatis, JPA/Hibernate"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://foystor.github.io/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/&title=JDBC, ORM/MyBatis, JPA/Hibernate"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://foystor.github.io/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/&title=JDBC, ORM/MyBatis, JPA/Hibernate"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://foystor.github.io/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/&name=JDBC, ORM/MyBatis, JPA/Hibernate&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://foystor.github.io/2022/08/18/jdbc-orm-mybatis-jpa-hibernate/&t=JDBC, ORM/MyBatis, JPA/Hibernate"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2022-2024
+    Foy Wan
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/tags/">Tags</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Categories</a></li><!--
+     --><!--
+       --><li><a href="/search/">Search</a></li><!--
+     -->
+      </ul>
+    </nav>
   </div>
 </footer>
 
     </div>
-    <nav id="mobile-nav">
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
 
 
-<script src="/js/jquery-3.6.4.min.js"></script>
+<script src="/js/main.js"></script>
 
+<!-- search -->
 
+<!-- Google Analytics -->
 
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+<!-- Baidu Analytics -->
 
+<!-- Cloudflare Analytics -->
 
+<!-- Umami Analytics -->
 
+<!-- Disqus Comments -->
 
-<script src="/js/script.js"></script>
+<!-- utterances Comments -->
 
+    <script type="text/javascript">
+      var utterances_repo = 'Foystor/foystor.github.io';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = 'Comment';
+      var utterances_theme = 'github-light';
 
+      (function(){
+          var script = document.createElement('script');
 
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
 
-
-  </div>
 </body>
 </html>
