@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://foystor.github.io/categories/index.html</loc>
-    
-    <lastmod>2024-07-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://foystor.github.io/2022/07/18/%E4%BB%98%E3%81%8D%E5%90%88%E3%81%A3%E3%81%A6%E3%81%82%E3%81%92%E3%81%A6%E3%82%82%E3%81%84%E3%81%84%E3%81%8B%E3%81%AA/</loc>
     
     <lastmod>2024-07-01</lastmod>
@@ -59,13 +50,6 @@
   </url>
   
   <url>
-    <loc>https://foystor.github.io/tags/Java/</loc>
-    <lastmod>2024-07-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://foystor.github.io/tags/Spring-Boot/</loc>
     <lastmod>2024-07-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -88,6 +72,13 @@
   
   <url>
     <loc>https://foystor.github.io/tags/Logging/</loc>
+    <lastmod>2024-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://foystor.github.io/tags/Java/</loc>
     <lastmod>2024-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -157,13 +148,6 @@
   </url>
   
   <url>
-    <loc>https://foystor.github.io/tags/Spring-MVC/</loc>
-    <lastmod>2024-07-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://foystor.github.io/tags/Spring-Cloud/</loc>
     <lastmod>2024-07-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -179,6 +163,13 @@
   
   <url>
     <loc>https://foystor.github.io/tags/Microservice/</loc>
+    <lastmod>2024-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://foystor.github.io/tags/Spring-MVC/</loc>
     <lastmod>2024-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
