@@ -2,9 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yuriwebo.github.io/2025/09/28/%E7%B1%B3%E6%80%BB%E7%9A%84%E6%88%BF%E9%97%B4-%E7%BD%91%E7%AB%99%E9%A1%B9%E7%9B%AE%E6%96%B0%E5%BC%80%E5%BC%A0%EF%BC%81/</loc>
+    
+    <lastmod>2025-09-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://yuriwebo.github.io/2022/07/18/%E4%BB%98%E3%81%8D%E5%90%88%E3%81%A3%E3%81%A6%E3%81%82%E3%81%92%E3%81%A6%E3%82%82%E3%81%84%E3%81%84%E3%81%8B%E3%81%AA/</loc>
     
-    <lastmod>2024-07-01</lastmod>
+    <lastmod>2025-09-28</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -12,6 +21,15 @@
   
   <url>
     <loc>https://yuriwebo.github.io/2022/04/26/daokoi/</loc>
+    
+    <lastmod>2025-09-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yuriwebo.github.io/tags/index.html</loc>
     
     <lastmod>2024-07-01</lastmod>
     
@@ -21,15 +39,6 @@
   
   <url>
     <loc>https://yuriwebo.github.io/search/index.html</loc>
-    
-    <lastmod>2024-07-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://yuriwebo.github.io/tags/index.html</loc>
     
     <lastmod>2024-07-01</lastmod>
     
@@ -63,14 +72,35 @@
   </url>
   
   <url>
-    <loc>https://yuriwebo.github.io/tags/material-collection/</loc>
+    <loc>https://yuriwebo.github.io/tags/%E7%89%A9%E6%96%99%E6%95%B4%E7%90%86/</loc>
     <lastmod>2025-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://yuriwebo.github.io/tags/intro/</loc>
+    <loc>https://yuriwebo.github.io/tags/%E4%BB%8B%E7%BB%8D/</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yuriwebo.github.io/tags/%E7%BD%91%E7%AB%99/</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yuriwebo.github.io/tags/%E9%A1%B9%E7%9B%AE/</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yuriwebo.github.io/tags/%E6%B0%B4%E6%98%9F%E7%9A%84%E9%AD%94%E5%A5%B3/</loc>
     <lastmod>2025-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -79,14 +109,21 @@
 
   
   <url>
-    <loc>https://yuriwebo.github.io/categories/TV-series/</loc>
+    <loc>https://yuriwebo.github.io/categories/%E7%94%B5%E8%A7%86%E5%89%A7/</loc>
     <lastmod>2025-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://yuriwebo.github.io/categories/Manga/</loc>
+    <loc>https://yuriwebo.github.io/categories/%E6%BC%AB%E7%94%BB/</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yuriwebo.github.io/categories/%E4%BA%8C%E5%88%9B/</loc>
     <lastmod>2025-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
