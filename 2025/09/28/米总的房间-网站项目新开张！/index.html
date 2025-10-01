@@ -14,7 +14,7 @@
 <meta property="og:description" content="好久不见！这是时隔3年的第一篇百合帖！ 其实帖子一直有在写，只不过大多是技术相关的笔记（在技术专题的blog里）。想写百合帖的话，每次写完了都要commit，我毕竟也是个好吃懒做之徒，所以3年来我就写了2篇… 不过最近在重温水星的魔女，突发奇想，要不做一个水魔的网站吧！嗯…那做什么好呢？只是做一个介绍用的？很久之前刚学网站的时候就做过这种的，很适合自嗨，但对其它人来说没什么趣味性。 那就做一个 米">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-09-28T07:00:32.000Z">
-<meta property="article:modified_time" content="2025-09-30T10:34:45.120Z">
+<meta property="article:modified_time" content="2025-10-01T02:22:36.487Z">
 <meta property="article:author" content="yuriwebo">
 <meta property="article:tag" content="网站">
 <meta property="article:tag" content="项目">
@@ -196,11 +196,12 @@
 
 <p>个人觉得实现这个界面的要点有：</p>
 <ul>
-<li>remote control system标题的背景是渐变色</li>
+<li>“remote control system”标题的背景是渐变色</li>
 <li>点击护身符图案后，上下文字的淡入淡出动效、图案变化过程的动效</li>
-<li>底部的Happy birthday to you!♪跑马灯</li>
+<li>底部的“Happy birthday to you!♪”跑马灯</li>
 <li>生日快乐bgm的选定，因为没有ost释出所以要自己挑一个类似原作的，缓慢又悲伤的调调</li>
-<li>变换后的文字有一部分被米总的手遮住了…好彩这个世界有AI（笑</li>
+<li>变换后的文字有一部分被米总的手遮住了…好彩这个世界有AI帮我分析（笑</li>
+<li>字体大小的调整，因为不希望它们自动换行或把图标挤开</li>
 </ul>
 <p>因为图案变化过程的动效实在太难厘清了，所以目前先做完了除此之外的界面。<br>话不多说，这就来看我的半成品吧！当当当当————</p>
 <figure>
@@ -213,7 +214,28 @@
   <center>变换后</center>
 </figure>
 
-<p>话说大家有没有发现，明明是米总的手机，completed用的颜色是hot桑的橙色，而不是cool桑的蓝色。<br>明明蒙着眼在色盘上戳一下就完了，还很特意挑个橙色诶，谁爱惨了我不说。</p>
+<p>话说大家有没有发现，明明是米总的手机，“completed”用的颜色是hot桑的橙色，而不是cool桑的蓝色。<br>明明蒙着眼在色盘上戳一下就完了，还很特意挑个橙色诶，谁爱惨了我不说。</p>
+<p>————n年过后————</p>
+<p>好了，我带着更细致的研究成果回来了！<br>经过逐帧分析，图标的动效我已研究透彻（嘻嘻，不夸夸我吗～</p>
+<p>整体的动效是分成2部分：</p>
+<ul>
+<li>一个巨大的五角星缩小成合适大小，留在图标中间</li>
+<li>俩小人从水平方向上被挤扁的状态，变成正常大小</li>
+</ul>
+<p>只要个个击破就好啦！</p>
+<figure>
+  <img src=omamori-icon-after.png>
+  <center>变换后的图标</center>
+</figure>
+
+<p>另外，仔细研究过后，我还发现了这个界面很多设计细节：</p>
+<ul>
+<li>“please tap”比较贴近图标，示意用户点击图标</li>
+<li>上文的”Activate…”比下文的“Completed”更快出现，符合程序运作逻辑</li>
+</ul>
+<p>没想到小小界面让我学了这么多设计知识，不得不给设计师加鸡腿了呢～</p>
+<p>至此，胜利护身符就完成啦～</p>
+<p>写于2025.10.1</p>
 
   </div>
 </article>
