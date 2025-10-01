@@ -79,13 +79,6 @@
   </url>
   
   <url>
-    <loc>https://yuriwebo.github.io/tags/%E4%BB%8B%E7%BB%8D/</loc>
-    <lastmod>2025-10-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://yuriwebo.github.io/tags/%E7%BD%91%E7%AB%99/</loc>
     <lastmod>2025-10-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -106,6 +99,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://yuriwebo.github.io/tags/%E4%BB%8B%E7%BB%8D/</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -116,14 +116,14 @@
   </url>
   
   <url>
-    <loc>https://yuriwebo.github.io/categories/%E6%BC%AB%E7%94%BB/</loc>
+    <loc>https://yuriwebo.github.io/categories/%E4%BA%8C%E5%88%9B/</loc>
     <lastmod>2025-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://yuriwebo.github.io/categories/%E4%BA%8C%E5%88%9B/</loc>
+    <loc>https://yuriwebo.github.io/categories/%E6%BC%AB%E7%94%BB/</loc>
     <lastmod>2025-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
